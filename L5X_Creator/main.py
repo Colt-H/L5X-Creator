@@ -26,7 +26,10 @@ def main():
         fw_version = input("Enter firmware version:\n>>>")
         bp_slots = input("Enter the size of the backplane:\n>>>")
         creator = input("Enter the name of the project creator:\n>>>")
-        generate_base(project_name, fw_version, bp_slots, creator)
+        processor_type = input("Enter the processor type (ex 1756-L72):\n>>>")
+        processor_major = input("Enter the major revision of the processor (ex 24):\n>>>")
+        processor_minor = input("Enter the minor revision of the processor (ex 24):\n>>>")
+        generate_base(project_name, fw_version, bp_slots, creator, processor_type, processor_major, processor_minor, project_path)
 
 if __name__ == "__main__":
     main()
