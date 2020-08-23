@@ -1,9 +1,10 @@
 """main function for the creator"""
 
 import os
+import sys
 from generate_base import generate_base
-from modules import io_build
 from controller import build_controller
+from advanced_edit import advanced_menu
 
 def startup():
     """Gets terminal size, displays title"""
@@ -36,10 +37,10 @@ def main():
         if sel.lower() == "n":
             main()
         elif sel.lower() == "e":
-            io_build(controller.project_path)
+            advanced_menu(controller.project_path)
             #Continuing the project
         elif sel.lower() == "c":
-            break
+            sys.exit()
 
 if __name__ == "__main__":
     main()

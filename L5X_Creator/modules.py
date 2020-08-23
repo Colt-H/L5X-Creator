@@ -3,6 +3,7 @@ Creates classes to build modules from
 """
 
 import xml.etree.ElementTree as ET
+from indent import indent
 
 class BuildComms():
     """Builds the comm module from input function"""
@@ -165,25 +166,6 @@ def io_build(project_path):
         input_card_data(project_path)
     elif sel.lower() == "o":
         output_card_data(project_path)
-
-def indent(elem, level=0):
-    """
-    Taken from https://stackoverflow.com/questions/3095434/inserting-newlines-in-xml-file-generated-via-xml-etree-elementtree-in-python
-    Credit to Erick M. Sprengel!
-    """
-    i = "\n" + level*"  "
-    if len(elem):
-        if not elem.text or not elem.text.strip():
-            elem.text = i + "  "
-        if not elem.tail or not elem.tail.strip():
-            elem.tail = i
-        for elem in elem:
-            indent(elem, level+1)
-        if not elem.tail or not elem.tail.strip():
-            elem.tail = i
-    else:
-        if level and (not elem.tail or not elem.tail.strip()):
-            elem.tail = i
 
 def comm_module_data(project_path):
     """Gets user input data on a comm module and passes it to the build comms class
