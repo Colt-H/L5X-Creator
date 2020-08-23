@@ -30,14 +30,14 @@ def main():
     controller["processor_major"] = input("Enter the major rev of the processor (ex 24):\n>>>")
     controller["processor_minor"] = input("Enter the minor rev of the processor (ex 11):\n>>>")
     generate_base(controller["project_path"],
-                    controller["software_rev"],
-                    controller["bp_slots"],
-                    controller["creator"],
-                    controller["processor_type"],
-                    controller["processor_major"],
-                    controller["processor_minor"],
-                    controller["project_path"]
-                    )
+                  controller["software_rev"],
+                  controller["bp_slots"],
+                  controller["creator"],
+                  controller["processor_type"],
+                  controller["processor_major"],
+                  controller["processor_minor"],
+                  controller["project_path"]
+                  )
     print("Project Created Successfully.")
     print(f'Create New Project (N), Edit {controller["project_name"]} (E), Close Editor (C):')
     sel = input('>>>')

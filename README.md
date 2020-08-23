@@ -9,7 +9,6 @@ This tool will create an L5x file to be imported into a blank project. Create th
  - finish tag adding feature
  - finish program adding feature
  - finish task adding feature
- - implement elementtree module for generating XML code
  - figure out file reading/writing
  - proper date/time for creation date in file
  - input validation
@@ -17,6 +16,7 @@ This tool will create an L5x file to be imported into a blank project. Create th
    - product types
  - some kind of testing
  - database of product codes
+   - Remove hardcode product codes and vendor IDs once database is up
  - testing for CommMethod and config IDs
 
 ### Working so far:
