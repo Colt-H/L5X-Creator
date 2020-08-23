@@ -39,15 +39,16 @@ def main():
                   controller["project_path"]
                   )
     print("Project Created Successfully.")
-    print(f'Create New Project (N), Edit {controller["project_name"]} (E), Close Editor (C):')
-    sel = input('>>>')
-    if sel.lower() == "n":
-        main()
-    elif sel.lower() == "e":
-        io_build(controller["project_path"])
-        #Continuing the project
-    elif sel.lower() == "c":
-        pass
+    while True:
+        print(f'Create New Project (N), Edit {controller["project_name"]} (E), Close Editor (C):')
+        sel = input('>>>')
+        if sel.lower() == "n":
+            main()
+        elif sel.lower() == "e":
+            io_build(controller["project_path"])
+            #Continuing the project
+        elif sel.lower() == "c":
+            break
 
 if __name__ == "__main__":
     main()
