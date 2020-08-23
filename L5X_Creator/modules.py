@@ -48,6 +48,7 @@ class BuildComms():
         new_module.attrib["Major"] = self.major_rev
         new_module.attrib["Minor"] = self.minor_rev
         new_module.attrib["ParentModule"] = "Local"
+        new_module.attrib["ParentModPortID"] = "1"
         new_module.attrib["Inhibited"] = "false"
         new_module.attrib["MajorFault"] = "false"
         new_module_ekey = ET.SubElement(new_module, 'EKey')
