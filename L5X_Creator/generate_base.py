@@ -10,7 +10,7 @@ def generate_base(project_name,
                   project_path):
     """docstring"""
     datetime = "test"
-    filename = project_path+"\\"+project_name+".L5X"
+    filename = project_path+".L5X"
     print(filename)
     file = open(filename, "w+")
     file.write(f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

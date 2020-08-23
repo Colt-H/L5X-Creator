@@ -17,6 +17,7 @@ This tool will create an L5x file to be imported into a blank project. Create th
    - product types
  - some kind of testing
  - database of product codes
+ - testing for CommMethod and config IDs
 
 ### Working so far:
  - Generates a blank L5X file from hardcoded XML data that's able to be imported to ACD file
