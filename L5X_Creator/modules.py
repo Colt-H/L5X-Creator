@@ -1,16 +1,8 @@
 """
-Creates a class to build a comm module from
+Creates classes to build modules from
 """
 
 import xml.etree.ElementTree as ET
-
-# class io_build:
-
-#     def __init__(self):
-#     def build_comms():
-#     def build_input():
-#     def build_output():
-#     def write_to_file():
 
 class BuildComms():
     """Builds the comm module from input function"""
