@@ -15,7 +15,7 @@ class BuildProgs():
         self.main_rout_name = main_rout_name
 
     def build_prog_xml(self):
-        """Builds XML data for tags and writes to file
+        """Builds XML data for programs and writes to file
         """
         path = self.project_path+".L5X"
         xml = ET.parse(path)
@@ -30,34 +30,26 @@ class BuildProgs():
         indent(root)
         xml.write(path, encoding="utf-8", xml_declaration=True)
 
-def tag_build(path):
-    """simply contains user selection for what module type to add"""
-    print("Add another tag? (Y/N)")
+def prog_build(path):
+    """simply contains user selection for adding programs"""
+    print("Add another program? (Y/N)")
     sel = input(">>>")
     if sel.lower() == "y":
-        tag_build_data(path)
+        prog_build_data(path)
     elif sel.lower() == "n":
         return
 
-def tag_build_data(project_path):
-    """Gets user input data on a comm module and passes it to the build comms class
+def prog_build_data(project_path):
+    """Gets user input data on a program and passes it to the build prog class
 
     Args:
         project_path (string): path to project as defined in main
     """
-    print("Building New Comm Module.")
-    tag_name = input("enter the tag name:\n>>>")
-    tag_type = input("Enter the tag type (base/alias):\n>>>")
-    data_type = input("enter the tag data type (ex DINT):\n>>>")
-    radix = input("enter the tag radix (ex Decimal):\n>>>")
-    constant = input("constant? (true/false):\n>>>")
-    external_access = input("Enter the external access:\n>>>")
-    tags = BuildTags(project_path,
-                     tag_name,
-                     tag_type,
-                     data_type,
-                     radix,
-                     constant,
-                     external_access
+    print("Building New Program.")
+    prog_name = input("enter the program name:\n>>>")
+    main_rout_name = input("Enter the main routine name:\n>>>")
+    progs = BuildProgs(project_path,
+                     prog_name,
+                     main_rout_name,
                      )
-    tags.build_tags_xml()
+    progs.build_prog_xml()
