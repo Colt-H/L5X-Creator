@@ -1,4 +1,4 @@
-
+"""Builds tags"""
 
 import xml.etree.ElementTree as ET
 from indent import indent
