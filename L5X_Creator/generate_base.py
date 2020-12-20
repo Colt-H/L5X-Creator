@@ -1,5 +1,7 @@
 """Generates the base L5X file"""
 
+from datetime import datetime
+
 def generate_base(project_name,
                   fw_version,
                   backplane,
@@ -9,7 +11,8 @@ def generate_base(project_name,
                   processor_minor,
                   project_path):
     """docstring"""
-    datetime = "test"
+    now = datetime.now()
+    currentdate = now.strftime("%a %b %d %H:%M:%S %Y")
     filename = project_path+".L5X"
     print(filename)
     file = open(filename, "w+")
@@ -20,7 +23,7 @@ def generate_base(project_name,
                                     TargetType="Controller"
                                     ContainsContext="false"
                                     Owner="{owner}"
-                                    ExportDate="{datetime}"
+                                    ExportDate="{currentdate}"
                                     ExportOptions="DeocratedData ForceProtectedEncoding AllProjDocTrans">
                     <Controller Use="Target"
                                 Name="{project_name}"
@@ -29,8 +32,8 @@ def generate_base(project_name,
                                 MinorRev="{processor_minor}"
                                 TimeSlice="20"
                                 ShareUnusedTimeSlice="1"
-                                ProjectCreationDate="{datetime}"
-                                LastModifiedDate="{datetime}"
+                                ProjectCreationDate="{currentdate}"
+                                LastModifiedDate="{currentdate}"
                                 SFCExecutionControl="CurrentActive"
                                 SFCRestartPosition="MostRecent"
                                 SFCLastScan="DontScan"
@@ -40,7 +43,7 @@ def generate_base(project_name,
                                 InhibitAutomaticFirmwareUpdate="0"
                                 PassThroughConfiguration="EnabledWithAppend"
                                 DownloadProjectDocumentationAndExtendedProperties="true">
-                        <RedundancyInfo Enabled="false" 
+                        <RedundancyInfo Enabled="false"
                                         KeepTestEditsOnSwitchOver="false"
                                         IOMemoryPadPercentage="90"
                                         DataTablePadPercentage="50"/>

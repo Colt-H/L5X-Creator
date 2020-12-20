@@ -21,12 +21,16 @@ class BuildProgs():
         xml = ET.parse(path)
         root = xml.getroot()
         modules = root.find("./Controller/Programs")
-        new_tag = ET.SubElement(modules, 'Program')
-        new_tag.attrib["Name"] = self.prog_name
-        new_tag.attrib["TestEdits"] = "false"
-        new_tag.attrib["MainRouineName"] = self.main_rout_name
-        new_tag.attrib["Disabled"] = "false"
-        new_tag.attrib["UseAsFolder"] = "false"
+        new_prog = ET.SubElement(modules, 'Program')
+        new_prog.attrib["Name"] = self.prog_name
+        new_prog.attrib["TestEdits"] = "false"
+        new_prog.attrib["MainRoutineName"] = self.main_rout_name
+        new_prog.attrib["Disabled"] = "false"
+        new_prog.attrib["UseAsFolder"] = "false"
+        new_prog_routines = ET.SubElement(new_prog, "Routines")
+        new_prog_base_routine = ET.SubElement(new_prog_routines, "Routine")
+        new_prog_base_routine.attrib["Name"] = "MainRoutine"
+        new_prog_base_routine.attrib["Type"] = "RLL"
         indent(root)
         xml.write(path, encoding="utf-8", xml_declaration=True)
 
@@ -49,7 +53,7 @@ def prog_build_data(project_path):
     prog_name = input("enter the program name:\n>>>")
     main_rout_name = input("Enter the main routine name:\n>>>")
     progs = BuildProgs(project_path,
-                     prog_name,
-                     main_rout_name,
-                     )
+                       prog_name,
+                       main_rout_name,
+                       )
     progs.build_prog_xml()

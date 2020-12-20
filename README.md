@@ -13,7 +13,6 @@ This tool will create an L5x file to be imported into a blank project. Create th
   - add functionality to rename sub routines later and change prog types
 - finish task adding feature
 - figure out file reading/writing
-- proper date/time for creation date in file
 - input validation
   - firmware revisions
   - product types
